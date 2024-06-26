@@ -44,18 +44,29 @@ void Pharm::showInfo() const{
 	}
 }
 
-void Pharm::addMedicine(Medicine obj)
-{
+void Pharm::addMedicine(Medicine obj){
+	addItemBack(m_arrMed, m_sizeMed, obj);
 }
 
 void Pharm::findMedicine(const char* title) const
 {
+	for (int i = 0; i < m_sizeMed; i++)	{
+		if (strcmp(title, m_arrMed[i].getTitle()) == 0)		{
+			m_arrMed[i].showInfo();
+			return;
+		}
+	}
+	cout << "Not found!\n";
 }
 
-void Pharm::sortByTitle()
-{
+void Pharm::sortByTitle(){
+	sort_if<Medicine>(m_arrMed, m_sizeMed, [](Medicine a, Medicine b) {
+		return strcmp(a.getTitle(), b.getTitle()) > 0;
+		});
 }
 
-void Pharm::sortByPrice()
-{
+void Pharm::sortByPrice(){
+	sort_if<Medicine>(m_arrMed, m_sizeMed, [](Medicine a, Medicine b) {
+		return a.getPrice() > b.getPrice();
+		});
 }
