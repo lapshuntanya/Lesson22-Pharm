@@ -40,7 +40,20 @@ Medicine::Medicine(const Medicine& obj_copy)
 
 Medicine& Medicine::operator=(const Medicine& obj_copy)
 {
-    // TODO: insert return statement here
+    this->~Medicine();
+
+    int sizeT = strlen(obj_copy.m_title) + 1;
+    this->m_title = new char[sizeT];
+    strcpy_s(this->m_title, sizeT, obj_copy.m_title);
+
+    this->m_type = obj_copy.m_type;
+    this->m_price = obj_copy.m_price;
+
+    int sizeC = strlen(obj_copy.m_country) + 1;
+    this->m_country = new char[sizeC];
+    strcpy_s(this->m_country, sizeC, obj_copy.m_country);
+
+    return *this;
 }
 
 Medicine::~Medicine()
