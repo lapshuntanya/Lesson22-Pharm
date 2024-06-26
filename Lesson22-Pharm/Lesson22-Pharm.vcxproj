@@ -132,6 +132,7 @@
     <ClCompile Include="Pharm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Array_Template.h" />
     <ClInclude Include="Medicine.h" />
     <ClInclude Include="Pharm.h" />
   </ItemGroup>
