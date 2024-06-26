@@ -21,6 +21,7 @@ public:
 	Medicine();
 	Medicine(const char* title, TYPES type, const char* country,
 		float price);
+	Medicine(const Medicine& obj_copy);
 	~Medicine();
 
 	void setTitle(const char* title);

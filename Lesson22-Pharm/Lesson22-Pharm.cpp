@@ -11,5 +11,17 @@ int main()
     b.showInfo();
     c.showInfo();
     d.showInfo();
+    cout << "----------------------------------\n\n";
+
+    int n1 = 50;
+    int n2 = n1; // n2 = 50
+
+    Medicine k = a;
+    k.setTitle("Nurofen");
+    k.setPrice(50.34);
+
+    a.showInfo();
+    k.showInfo();
+
 }
 
