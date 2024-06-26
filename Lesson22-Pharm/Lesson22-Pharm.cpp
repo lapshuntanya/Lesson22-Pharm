@@ -16,12 +16,19 @@ int main()
     int n1 = 50;
     int n2 = n1; // n2 = 50
 
-    Medicine k = a;
+    Medicine k = a; //Copy constructor
     k.setTitle("Nurofen");
     k.setPrice(50.34);
 
     a.showInfo();
     k.showInfo();
+    cout << "----------------------------------\n\n";
+
+    a = d; //Operator =
+    a.setTitle("Analgin Forte");
+
+    a.showInfo();
+    d.showInfo();
 
 }
 

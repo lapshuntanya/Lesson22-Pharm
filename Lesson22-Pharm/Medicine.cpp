@@ -38,6 +38,11 @@ Medicine::Medicine(const Medicine& obj_copy)
     strcpy_s(this->m_country, sizeC, obj_copy.m_country);
 }
 
+Medicine& Medicine::operator=(const Medicine& obj_copy)
+{
+    // TODO: insert return statement here
+}
+
 Medicine::~Medicine()
 {
     delete[] m_title;
