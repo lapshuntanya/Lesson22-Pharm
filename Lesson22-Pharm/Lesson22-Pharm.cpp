@@ -1,4 +1,4 @@
-#include "Medicine.h"
+#include "Pharm.h"
 
 int main()
 {
@@ -7,7 +7,7 @@ int main()
     Medicine c("Dr. MOM", TYPES::syrope, "France", 150.65);
     const Medicine d("Analgin", TYPES::capsules, "India", 18.99);
 
-    a.showInfo();
+   /* a.showInfo();
     b.showInfo();
     c.showInfo();
     d.showInfo();
@@ -28,7 +28,26 @@ int main()
     a.setTitle("Analgin Forte");
 
     a.showInfo();
-    d.showInfo();
+    d.showInfo();*/
+
+    Pharm pharm("Pharm 911");
+    pharm.addMedicine(b);
+    pharm.addMedicine(d);
+    pharm.addMedicine(c);
+    pharm.addMedicine(Medicine("Nurofen", TYPES::pills, "Italy", 50.77));
+
+    pharm.showInfo();
+    cout << "++++++++++++++++++++++++++++++++++++++++\n";
+    pharm.findMedicine("Analgin");
+    pharm.findMedicine("Analgin Forte");
+
+    cout << "++++++++++++++++++++++++++++++++++++++++\n";
+    pharm.sortByTitle();
+    pharm.showInfo();
+
+    cout << "++++++++++++++++++++++++++++++++++++++++\n";
+    pharm.sortByPrice();
+    pharm.showInfo();
 
 }
 
